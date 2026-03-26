@@ -9,67 +9,87 @@
 
 <body>
 
-<div class="container">
+<div class="layout">
 
-    <!-- Profile Section -->
-    <div class="profile">
-        <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <img src="images/profile.jpg" alt="Profile" class="profile-img">
         <h1>Praveen</h1>
         <p class="role">Visual Designer</p>
-    </div>
 
-    <!-- Professional Work -->
-    <section>
-        <h2>Professional Work</h2>
-
-        <div class="project">
-            <h3>Motion Reel – Animation Video</h3>
-            <p>Brand storytelling motion design created for product marketing.</p>
-            <div class="video-placeholder">Video Preview Here</div>
+        <div class="menu">
+            <a href="#work">Professional Work</a>
+            <a href="#personal">Personal Work</a>
+            <a href="#contact">Contact</a>
         </div>
+    </aside>
 
-        <div class="project">
-            <h3>Kinetic Typography Ad</h3>
-            <p>Dynamic typography animation used for promotional campaign.</p>
-            <div class="video-placeholder">Video Preview Here</div>
-        </div>
+    <!-- RIGHT CONTENT -->
+    <main class="content">
 
-        <div class="project">
-            <h3>Brand Identity Design</h3>
-            <p>Complete logo and branding package for startup company.</p>
-            <img src="images/project1.jpg" class="project-img">
-        </div>
+        <section id="work">
+            <h2>Professional Work</h2>
 
-        <div class="project">
-            <h3>Product Explainer Video</h3>
-            <p>Corporate product explainer animation for SaaS platform.</p>
-            <div class="video-placeholder">Video Preview Here</div>
-        </div>
-    </section>
+            <div class="grid">
 
-    <!-- Personal Work -->
-    <section>
-        <h2>Personal Work</h2>
+                <div class="card">
+                    <img src="images/project1.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Brand Identity</h3>
+                        <p>Complete brand system for startup company.</p>
+                    </div>
+                </div>
 
-        <div class="project">
-            <h3>Creative Short Film</h3>
-            <p>Experimental visual storytelling project.</p>
-            <div class="video-placeholder">Video Preview Here</div>
-        </div>
+                <div class="card">
+                    <img src="images/project2.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Kinetic Typography</h3>
+                        <p>Animated typography promotional video.</p>
+                    </div>
+                </div>
 
-        <div class="project">
-            <h3>Illustration Series</h3>
-            <p>Personal illustration exploration using digital tools.</p>
-            <img src="images/project2.jpg" class="project-img">
-        </div>
-    </section>
+                <div class="card">
+                    <img src="images/project3.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Product Explainer</h3>
+                        <p>Corporate explainer animation for SaaS platform.</p>
+                    </div>
+                </div>
 
-    <!-- Contact -->
-    <section>
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>Instagram: @yourhandle</p>
-    </section>
+            </div>
+        </section>
+
+        <section id="personal">
+            <h2>Personal Work</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <img src="images/project4.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Short Film</h3>
+                        <p>Creative visual storytelling experiment.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/project5.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Illustration Series</h3>
+                        <p>Digital illustration exploration project.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>Instagram: @yourhandle</p>
+        </section>
+
+    </main>
 
 </div>
 

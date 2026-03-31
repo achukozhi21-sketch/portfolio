@@ -1,144 +1,72 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.6;
-}
-
-/* HERO */
-.hero {
-    height: 90vh;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 60px;
-    font-weight: 700;
-}
-
-.hero p {
-    margin-top: 15px;
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 30px;
-    background: #ff4d5a;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #e63e4c;
-}
-
-/* ABOUT */
-.about {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.about h2 {
-    margin-bottom: 20px;
-}
-
-.about p {
-    max-width: 600px;
-    margin: auto;
-    color: #555;
-}
-
 /* PROJECTS */
 .projects {
-    padding: 80px 10%;
+    padding: 100px 10%;
+    background: #fafafa;
 }
 
 .projects h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    font-size: 32px;
+    font-weight: 600;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* VERTICAL LAYOUT */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
+/* PROJECT CARD */
 .project {
     position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
     overflow: hidden;
-    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: #000;
 }
 
+/* IMAGE */
 .project img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    transition: 0.4s ease;
+    transition: transform 0.6s ease;
 }
 
-/* Featured Project Bigger */
-.featured {
-    grid-column: span 2;
-}
-
-.project:hover img {
-    transform: scale(1.1);
-}
-
-/* Overlay */
+/* OVERLAY */
 .overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    color: white;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
 }
 
-/* CONTACT */
-.contact {
-    padding: 80px 10%;
-    text-align: center;
-    background: #f7f7f7;
+.overlay h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
 }
 
-.contact h2 {
-    margin-bottom: 20px;
+.overlay p {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: white;
+/* HOVER EFFECT */
+.project:hover img {
+    transform: scale(1.08);
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px) {
-    .featured {
-        grid-column: span 1;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
+.project:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -14,8 +14,8 @@ body {
 /* HERO */
 .hero {
     height: 90vh;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    color: white;
+    background: linear-gradient(135deg, #e0e7ff, #fce7f3); /* pastel lavender → pink */
+    color: #1f2937; /* dark text for readability */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,11 +33,12 @@ body {
     opacity: 0.8;
 }
 
+/* Button (slightly adjusted for pastel bg) */
 .btn {
     display: inline-block;
     margin-top: 30px;
     padding: 12px 30px;
-    background: #ff4d5a;
+    background: #6366f1; /* pastel indigo */
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -45,7 +46,7 @@ body {
 }
 
 .btn:hover {
-    background: #e63e4c;
+    background: #4f46e5;
 }
 
 /* ABOUT */
@@ -67,13 +68,13 @@ body {
 /* PROJECTS */
 .projects {
     padding: 80px 12%;
-    background: #faf5ff; /* soft pastel background */
+    background: #f8fafc;
 }
 
 .projects h2 {
     font-size: 28px;
     margin-bottom: 40px;
-    border-bottom: 1px solid #e9d5ff;
+    border-bottom: 1px solid #e2e8f0;
     padding-bottom: 10px;
 }
 
@@ -98,38 +99,37 @@ body {
 
 /* Description */
 .project p {
-    color: #6b7280;
+    color: #64748b;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
-/* 🎨 VIDEO BOX - PASTEL STYLE */
+/* Video Box */
 .project .video-box {
     width: 100%;
     height: 300px;
-    background: linear-gradient(135deg, #fce7f3, #e0e7ff); /* pastel pink → lavender */
-    border-radius: 16px;
-    border: 1px solid #f3e8ff;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5f5);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6b7280;
+    color: #475569;
     font-size: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
 }
 
-/* Hover effect */
 .project .video-box:hover {
-    transform: scale(1.03);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* CONTACT */
 .contact {
     padding: 80px 10%;
     text-align: center;
-    background: #faf5ff;
+    background: #f8fafc;
 }
 
 .contact h2 {

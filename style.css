@@ -14,7 +14,7 @@ body {
 /* HERO */
 .hero {
     height: 90vh;
-    background: linear-gradient(135deg, #3e2c23, #8b6f47);
+    background: linear-gradient(135deg, #41295a, #2f0743);
     color: white;
     display: flex;
     justify-content: center;

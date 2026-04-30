@@ -13,15 +13,15 @@
 <section class="hero">
     <div>
         <h1>Akshaya Santhosh</h1>
-        <p>Creative Designer • Motion Artist</p>
-        <a href="#projects" class="btn">Explore Work</a>
+        <p>Creative Designer</p>
+        <a href="#projects" class="btn">View Work</a>
     </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about">
     <h2>About Me</h2>
-    <p>I design visually engaging and meaningful experiences.</p>
+    <p>I design modern and engaging visual experiences.</p>
 </section>
 
 <!-- PROJECTS -->
@@ -30,37 +30,39 @@
 
     <div class="slider">
 
-        <div class="project active">
-            <div class="card">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="project-track">
+
+            <div class="project active">
                 <h4>Brand Identity</h4>
-                <p>Modern logo & branding system</p>
+                <p>Creative branding design</p>
                 <div class="video-box">Preview</div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="card">
+            <div class="project">
                 <h4>Kinetic Typography</h4>
-                <p>Animated motion graphics</p>
+                <p>Motion graphics project</p>
                 <div class="video-box">Preview</div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="card">
+            <div class="project">
                 <h4>Product Animation</h4>
-                <p>Corporate explainer video</p>
+                <p>Explainer video design</p>
                 <div class="video-box">Preview</div>
             </div>
+
+            <div class="project">
+                <h4>Illustration Series</h4>
+                <p>Creative artwork</p>
+                <div class="video-box">Preview</div>
+            </div>
+
         </div>
 
-        <div class="controls">
-            <button id="prev">← Prev</button>
-            <button id="next">Next →</button>
-        </div>
+        <button class="arrow right">&#10095;</button>
 
     </div>
-
 </section>
 
 <!-- CONTACT -->
@@ -74,32 +76,29 @@
 </footer>
 
 <script>
-const projects = document.querySelectorAll('.project');
-const next = document.getElementById('next');
-const prev = document.getElementById('prev');
+const track = document.querySelector('.project-track');
+const slides = document.querySelectorAll('.project');
+const next = document.querySelector('.right');
+const prev = document.querySelector('.left');
 
-let current = 0;
+let index = 0;
 
-function showSlide(index) {
-    projects.forEach(p => p.classList.remove('active'));
-    projects[index].classList.add('active');
+function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
 }
 
 next.onclick = () => {
-    current = (current + 1) % projects.length;
-    showSlide(current);
+    if(index < slides.length - 1) index++;
+    updateSlider();
 };
 
 prev.onclick = () => {
-    current = (current - 1 + projects.length) % projects.length;
-    showSlide(current);
+    if(index > 0) index--;
+    updateSlider();
 };
-
-/* KEYBOARD SUPPORT */
-document.addEventListener('keydown', (e) => {
-    if(e.key === "ArrowRight") next.click();
-    if(e.key === "ArrowLeft") prev.click();
-});
 </script>
 
 </body>

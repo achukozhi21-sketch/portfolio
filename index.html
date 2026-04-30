@@ -1,105 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshaya Portfolio</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<section class="projects">
 
-<body>
+    <button class="arrow left">&#10094;</button>
 
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1>Akshaya Santhosh</h1>
-        <p>Creative Designer</p>
-        <a href="#projects" class="btn">View Work</a>
-    </div>
-</section>
+    <div class="project-track">
 
-<!-- ABOUT -->
-<section class="about">
-    <h2>About Me</h2>
-    <p>I design modern and engaging visual experiences.</p>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects">
-    <h2>My Projects</h2>
-
-    <div class="slider">
-
-        <button class="arrow left">&#10094;</button>
-
-        <div class="project-track">
-
-            <div class="project active">
-                <h4>Brand Identity</h4>
-                <p>Creative branding design</p>
-                <div class="video-box">Preview</div>
+        <!-- Slide 1 -->
+        <div class="project">
+            <img src="https://picsum.photos/1200/600?1">
+            <div class="project-content">
+                <h2>GRAPHIC DESIGNER</h2>
+                <p>Creative visual storytelling</p>
             </div>
-
-            <div class="project">
-                <h4>Kinetic Typography</h4>
-                <p>Motion graphics project</p>
-                <div class="video-box">Preview</div>
+            <div class="project-bar">
+                Professional Web design and Development with modern UI.
             </div>
-
-            <div class="project">
-                <h4>Product Animation</h4>
-                <p>Explainer video design</p>
-                <div class="video-box">Preview</div>
-            </div>
-
-            <div class="project">
-                <h4>Illustration Series</h4>
-                <p>Creative artwork</p>
-                <div class="video-box">Preview</div>
-            </div>
-
         </div>
 
-        <button class="arrow right">&#10095;</button>
+        <!-- Slide 2 -->
+        <div class="project">
+            <img src="https://picsum.photos/1200/600?2">
+            <div class="project-content">
+                <h2>MOTION DESIGN</h2>
+                <p>Animations & video editing</p>
+            </div>
+            <div class="project-bar">
+                Engaging motion graphics for brands.
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="project">
+            <img src="https://picsum.photos/1200/600?3">
+            <div class="project-content">
+                <h2>BRANDING</h2>
+                <p>Identity & logo systems</p>
+            </div>
+            <div class="project-bar">
+                Building strong brand identities.
+            </div>
+        </div>
 
     </div>
+
+    <button class="arrow right">&#10095;</button>
+
 </section>
-
-<!-- CONTACT -->
-<section class="contact">
-    <h2>Contact</h2>
-    <p>Email: akshayasanthosh2000@gmail.com</p>
-</section>
-
-<footer>
-    <p>© 2026 Akshaya</p>
-</footer>
-
-<script>
-const track = document.querySelector('.project-track');
-const slides = document.querySelectorAll('.project');
-const next = document.querySelector('.right');
-const prev = document.querySelector('.left');
-
-let index = 0;
-
-function updateSlider() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    slides.forEach(s => s.classList.remove('active'));
-    slides[index].classList.add('active');
-}
-
-next.onclick = () => {
-    if(index < slides.length - 1) index++;
-    updateSlider();
-};
-
-prev.onclick = () => {
-    if(index > 0) index--;
-    updateSlider();
-};
-</script>
-
-</body>
-</html>

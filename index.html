@@ -1,4 +1,34 @@
-<section class="projects">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshaya Santhosh | Creative Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div>
+        <h1>Akshaya Santhosh</h1>
+        <p>Visual Designer • Motion Artist • Creative Thinker</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        I create visually compelling designs that combine creativity and strategy.
+        My work focuses on branding, motion design, and digital storytelling.
+    </p>
+</section>
+
+<!-- PROJECTS (HERO STYLE SLIDER) -->
+<section id="projects" class="projects">
 
     <button class="arrow left">&#10094;</button>
 
@@ -8,11 +38,11 @@
         <div class="project">
             <img src="https://picsum.photos/1200/600?1">
             <div class="project-content">
-                <h2>GRAPHIC DESIGNER</h2>
+                <h2>GRAPHIC DESIGN</h2>
                 <p>Creative visual storytelling</p>
             </div>
             <div class="project-bar">
-                Professional Web design and Development with modern UI.
+                Modern design solutions for brands and businesses.
             </div>
         </div>
 
@@ -24,7 +54,7 @@
                 <p>Animations & video editing</p>
             </div>
             <div class="project-bar">
-                Engaging motion graphics for brands.
+                Engaging motion graphics and video content.
             </div>
         </div>
 
@@ -36,7 +66,7 @@
                 <p>Identity & logo systems</p>
             </div>
             <div class="project-bar">
-                Building strong brand identities.
+                Strong brand identity and visual systems.
             </div>
         </div>
 
@@ -45,3 +75,41 @@
     <button class="arrow right">&#10095;</button>
 
 </section>
+
+<!-- CONTACT -->
+<section class="contact">
+    <h2>Let's Work Together</h2>
+    <p>Email: akshayasanthosh2000@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Akshaya Santhosh | All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script>
+const track = document.querySelector('.project-track');
+const slides = document.querySelectorAll('.project');
+const next = document.querySelector('.right');
+const prev = document.querySelector('.left');
+
+let index = 0;
+
+function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+next.onclick = () => {
+    if (index < slides.length - 1) index++;
+    updateSlider();
+};
+
+prev.onclick = () => {
+    if (index > 0) index--;
+    updateSlider();
+};
+</script>
+
+</body>
+</html>

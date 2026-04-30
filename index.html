@@ -11,7 +11,7 @@
 
 <!-- HERO -->
 <header class="hero">
-    <div>
+    <div class="hero-content">
         <h1>Akshaya Santhosh</h1>
         <p>Visual Designer • Motion Artist • Creative Thinker</p>
         <a href="#projects" class="btn">View My Work</a>
@@ -27,69 +27,62 @@
     </p>
 </section>
 
-<!-- PROJECTS (HERO STYLE SLIDER) -->
+<!-- PROJECTS -->
 <section id="projects" class="projects">
+    <h2>Selected Works</h2>
+    <h3>Photoshop</h3>
 
-    <button class="arrow left">&#10094;</button>
+    <div class="slider">
 
-    <div class="project-track">
+        <button class="arrow left">&#10094;</button>
 
-        <!-- Slide 1 -->
-        <div class="project">
-            <img src="https://picsum.photos/1200/600?1">
-            <div class="project-content">
-                <h2>GRAPHIC DESIGN</h2>
-                <p>Creative visual storytelling</p>
+        <div class="project-grid">
+
+            <div class="project active">
+                <h4>Brand Identity System</h4>
+                <p>Complete branding & logo design</p>
+                <div class="video-box">Preview Here</div>
             </div>
-            <div class="project-bar">
-                Modern design solutions for brands and businesses.
+
+            <div class="project">
+                <h4>Kinetic Typography</h4>
+                <p>Motion graphics campaign</p>
+                <div class="video-box">Preview Here</div>
             </div>
+
+            <div class="project">
+                <h4>Product Explainer</h4>
+                <p>Corporate animation project</p>
+                <div class="video-box">Preview Here</div>
+            </div>
+
+            <div class="project">
+                <h4>Illustration Series</h4>
+                <p>Personal creative exploration</p>
+                <div class="video-box">Preview Here</div>
+            </div>
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="project">
-            <img src="https://picsum.photos/1200/600?2">
-            <div class="project-content">
-                <h2>MOTION DESIGN</h2>
-                <p>Animations & video editing</p>
-            </div>
-            <div class="project-bar">
-                Engaging motion graphics and video content.
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="project">
-            <img src="https://picsum.photos/1200/600?3">
-            <div class="project-content">
-                <h2>BRANDING</h2>
-                <p>Identity & logo systems</p>
-            </div>
-            <div class="project-bar">
-                Strong brand identity and visual systems.
-            </div>
-        </div>
+        <button class="arrow right">&#10095;</button>
 
     </div>
-
-    <button class="arrow right">&#10095;</button>
-
 </section>
 
 <!-- CONTACT -->
 <section class="contact">
     <h2>Let's Work Together</h2>
     <p>Email: akshayasanthosh2000@gmail.com</p>
+    <p>Instagram: @yourhandle</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2026 Akshaya Santhosh | All Rights Reserved</p>
+    <p>© 2026 Akshaya | All Rights Reserved</p>
 </footer>
 
 <!-- JS -->
 <script>
-const track = document.querySelector('.project-track');
+const track = document.querySelector('.project-grid');
 const slides = document.querySelectorAll('.project');
 const next = document.querySelector('.right');
 const prev = document.querySelector('.left');
@@ -98,15 +91,18 @@ let index = 0;
 
 function updateSlider() {
     track.style.transform = `translateX(-${index * 100}%)`;
+
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
 }
 
 next.onclick = () => {
-    if (index < slides.length - 1) index++;
+    if(index < slides.length - 1) index++;
     updateSlider();
 };
 
 prev.onclick = () => {
-    if (index > 0) index--;
+    if(index > 0) index--;
     updateSlider();
 };
 </script>

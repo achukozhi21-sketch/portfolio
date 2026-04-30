@@ -3,136 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshaya Santhosh | Creative Portfolio</title>
+<title>Akshaya Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- HERO -->
-<header class="hero">
-    <div class="hero-content">
+<section class="hero">
+    <div>
         <h1>Akshaya Santhosh</h1>
-        <p>Visual Designer • Motion Artist • Creative Thinker</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <p>Creative Designer • Motion Artist</p>
+        <a href="#projects" class="btn">Explore Work</a>
     </div>
-</header>
+</section>
 
 <!-- ABOUT -->
 <section class="about">
     <h2>About Me</h2>
-    <p>
-        I create visually compelling designs that combine creativity and strategy.
-        My work focuses on branding, motion design, and digital storytelling
-        to build meaningful visual experiences.
-    </p>
+    <p>I design visually engaging and meaningful experiences.</p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="projects">
-    <h2>Selected Works</h2>
-    <h3>Photoshop</h3>
+    <h2>My Projects</h2>
 
     <div class="slider">
 
-        <button class="arrow left">&#10094;</button>
-
-        <div class="project-grid">
-
-            <div class="project">
-                <h4>Brand Identity System</h4>
-                <p>Complete branding & logo design</p>
-                <div class="video-box">Preview Here</div>
+        <div class="project active">
+            <div class="card">
+                <h4>Brand Identity</h4>
+                <p>Modern logo & branding system</p>
+                <div class="video-box">Preview</div>
             </div>
-
-            <div class="project">
-                <h4>Kinetic Typography</h4>
-                <p>Motion graphics campaign</p>
-                <div class="video-box">Preview Here</div>
-            </div>
-
-            <div class="project">
-                <h4>Product Explainer</h4>
-                <p>Corporate animation project</p>
-                <div class="video-box">Preview Here</div>
-            </div>
-
-            <div class="project">
-                <h4>Illustration Series</h4>
-                <p>Personal creative exploration</p>
-                <div class="video-box">Preview Here</div>
-            </div>
-
         </div>
 
-        <button class="arrow right">&#10095;</button>
+        <div class="project">
+            <div class="card">
+                <h4>Kinetic Typography</h4>
+                <p>Animated motion graphics</p>
+                <div class="video-box">Preview</div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="card">
+                <h4>Product Animation</h4>
+                <p>Corporate explainer video</p>
+                <div class="video-box">Preview</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prev">← Prev</button>
+            <button id="next">Next →</button>
+        </div>
 
     </div>
 
-    <div class="dots"></div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact">
-    <h2>Let's Work Together</h2>
+    <h2>Contact</h2>
     <p>Email: akshayasanthosh2000@gmail.com</p>
-    <p>Instagram: @yourhandle</p>
 </section>
 
 <footer>
-    <p>© 2026 Akshaya | All Rights Reserved</p>
+    <p>© 2026 Akshaya</p>
 </footer>
 
-<!-- JS -->
 <script>
-const track = document.querySelector('.project-grid');
-const slides = document.querySelectorAll('.project');
-const nextBtn = document.querySelector('.right');
-const prevBtn = document.querySelector('.left');
-const dotsContainer = document.querySelector('.dots');
+const projects = document.querySelectorAll('.project');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
 
-let index = 0;
-let autoSlide;
+let current = 0;
 
-/* DOTS */
-slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    if(i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => moveSlide(i));
-    dotsContainer.appendChild(dot);
+function showSlide(index) {
+    projects.forEach(p => p.classList.remove('active'));
+    projects[index].classList.add('active');
+}
+
+next.onclick = () => {
+    current = (current + 1) % projects.length;
+    showSlide(current);
+};
+
+prev.onclick = () => {
+    current = (current - 1 + projects.length) % projects.length;
+    showSlide(current);
+};
+
+/* KEYBOARD SUPPORT */
+document.addEventListener('keydown', (e) => {
+    if(e.key === "ArrowRight") next.click();
+    if(e.key === "ArrowLeft") prev.click();
 });
-
-const dots = document.querySelectorAll('.dot');
-
-function moveSlide(i) {
-    index = i;
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-}
-
-/* BUTTONS */
-nextBtn.onclick = () => moveSlide((index + 1) % slides.length);
-prevBtn.onclick = () => moveSlide((index - 1 + slides.length) % slides.length);
-
-/* AUTO SLIDE */
-function start() {
-    autoSlide = setInterval(() => {
-        moveSlide((index + 1) % slides.length);
-    }, 3000);
-}
-
-function stop() {
-    clearInterval(autoSlide);
-}
-
-start();
-
-/* PAUSE ON HOVER */
-document.querySelector('.slider').addEventListener('mouseenter', stop);
-document.querySelector('.slider').addEventListener('mouseleave', start);
 </script>
 
 </body>

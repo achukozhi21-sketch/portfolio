@@ -7,9 +7,8 @@
 
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background: #ffffff;
+    background: linear-gradient(120deg, #f8fafc, #eef2ff);
     color: #111;
-    line-height: 1.6;
 }
 
 /* HERO */
@@ -25,28 +24,25 @@ body {
 
 .hero h1 {
     font-size: 60px;
-    font-weight: 700;
 }
 
 .hero p {
     margin-top: 15px;
-    font-size: 18px;
     opacity: 0.8;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 30px;
-    background: #f472b6; /* fixed color */
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    border-radius: 30px;
     color: white;
     text-decoration: none;
-    border-radius: 30px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #e63e4c;
+    transform: scale(1.05);
 }
 
 /* ABOUT */
@@ -55,137 +51,105 @@ body {
     text-align: center;
 }
 
-.about h2 {
-    margin-bottom: 20px;
-}
-
-.about p {
-    max-width: 600px;
-    margin: auto;
-    color: #555; /* fixed */
-}
-
 /* PROJECTS */
 .projects {
-    padding: 80px 8%;
-    background: #f8fafc;
+    padding: 100px 10%;
+    text-align: center;
 }
 
 .projects h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.projects h3 {
-    margin-bottom: 30px;
-    color: #64748b;
+    margin-bottom: 40px;
 }
 
 /* SLIDER */
 .slider {
     position: relative;
-    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
 }
 
-.project-grid {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* EACH PROJECT */
+/* CARD */
 .project {
-    min-width: 100%;
-    padding: 10px;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.9) translateX(50px);
+    transition: 0.5s ease;
+    pointer-events: none;
 }
 
+.project.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    pointer-events: auto;
+}
+
+/* GLASS CARD */
+.card {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
 .project h4 {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .project p {
     color: #64748b;
-    font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* VIDEO BOX */
-.project .video-box {
-    width: 100%;
-    height: 300px;
-    background: linear-gradient(135deg, #e2e8f0, #cbd5f5);
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+/* VIDEO */
+.video-box {
+    height: 250px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #c7d2fe, #fbcfe8);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #475569;
-    font-size: 14px;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-.project .video-box:hover {
-    transform: scale(1.02);
+.video-box:hover {
+    transform: scale(1.03);
 }
 
-/* ARROWS */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* BUTTONS */
+.controls {
+    margin-top: 25px;
 }
 
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
-
-/* DOTS */
-.dots {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
+.controls button {
+    padding: 10px 18px;
     margin: 5px;
-    display: inline-block;
-    background: #cbd5f5;
-    border-radius: 50%;
+    border: none;
+    border-radius: 25px;
+    background: #6366f1;
+    color: white;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.dot.active {
-    background: #6366f1;
+.controls button:hover {
+    background: #ec4899;
 }
 
 /* CONTACT */
 .contact {
     padding: 80px 10%;
     text-align: center;
-    background: #f8fafc;
-}
-
-.contact h2 {
-    margin-bottom: 20px;
 }
 
 /* FOOTER */
 footer {
-    text-align: center;
     padding: 20px;
     background: #111;
     color: white;
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
+    text-align: center;
 }
